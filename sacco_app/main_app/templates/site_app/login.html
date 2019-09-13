@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load staticfiles %}
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>Precise Sacco Management System</title>
+    <meta content="Responsive admin theme build on top of Bootstrap 4" name="description" />
+    <meta content="Themesdesign" name="author" />
+    <link rel="shortcut icon" href="static/images/favicon.ico">
+
+    <!--Morris Chart CSS -->
+    <link rel="stylesheet" href="../plugins/morris/morris.css">
+
+    <link href="static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="static/css/metismenu.min.css" rel="stylesheet" type="text/css">
+    <link href="static/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="static/css/style.css" rel="stylesheet" type="text/css">
+    <!-- <link href="static/style.css" rel="stylesheet" type="text/css"> -->
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        <!-- Top Bar Start -->
+        <div class="topbar">
+
+            <!-- LOGO -->
+            <div class="topbar-left">
+                <a href="index.html" class="logo">
+                    <span class="logo-light">
+                            <i class="mdi mdi-camera-control"></i> Precise Verison [2.0]
+                        </span>
+                    <span class="logo-sm">
+                            <i class="mdi mdi-camera-control"></i>
+                        </span>
+                </a>
+            </div>
+
+            <nav class="navbar-custom">
+                <ul class="navbar-right list-inline float-right mb-0">
+
+                    <!-- language-->
+                    <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
+                        <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <img src="static/images/flags/kenya_flag.jpg" class="mr-2" height="12" alt="" /> Helpdesk: 0202166562(Telkom), 0729719339(Safaricom)<span class="mdi mdi-chevron-down"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated language-switch">
+                            <a class="dropdown-item" href="#"><img src="static/images/flags/french_flag.jpg" alt="" height="16" /><span> French </span></a>
+                            <a class="dropdown-item" href="#"><img src="static/images/flags/spain_flag.jpg" alt="" height="16" /><span> Spanish </span></a>
+                            <a class="dropdown-item" href="#"><img src="static/images/flags/russia_flag.jpg" alt="" height="16" /><span> Russian </span></a>
+                            <a class="dropdown-item" href="#"><img src="static/images/flags/germany_flag.jpg" alt="" height="16" /><span> German </span></a>
+                            <a class="dropdown-item" href="#"><img src="static/images/flags/italy_flag.jpg" alt="" height="16" /><span> Italian </span></a>
+                        </div>
+                    </li>
+
+                    <!-- full screen -->
+                    <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
+                        <a class="nav-link waves-effect" href="#" id="btn-fullscreen">
+                            <i class="mdi mdi-arrow-expand-all noti-icon"></i>
+                        </a>
+                    </li>
+
+                   
+
+                    <li class="dropdown notification-list list-inline-item">
+                        <div class="dropdown notification-list nav-pro-img">
+                            <a class="dropdown-toggle nav-link arrow-none nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                <!-- <img src="static/images/users/user-4.jpg" alt="user" class="rounded-circle"> -->
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                                <!-- item-->
+                                <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle"></i> Profile</a>
+                                <a class="dropdown-item" href="#"><i class="mdi mdi-wallet"></i> Wallet</a>
+                                <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="mdi mdi-settings"></i> Settings</a>
+                                <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline"></i> Lock screen</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="#"><i class="mdi mdi-power text-danger"></i> Logout</a>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <ul class="list-inline menu-left mb-0">
+                    <li class="float-left">
+                        <button class="button-menu-mobile open-left waves-effect">
+                            <i class="mdi mdi-menu"></i>
+                        </button>
+                    </li>
+                    <li class="d-none d-md-inline-block">
+                        <form role="search" class="app-search">
+                            <div class="form-group mb-0">
+                                <input type="text" class="form-control" placeholder="Search..">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+
+            </nav>
+
+        </div>
+        <!-- Top Bar End -->
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left side-menu">
+            <div class="slimscroll-menu" id="remove-scroll">
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
+                    <ul class="metismenu" id="side-menu">
+                        <li class="menu-title">Menu</li>
+                        <!-- <li>
+                            <a href="#" class="waves-effect">
+                                <i class="icon-accelerator"></i><span class="badge badge-success badge-pill float-right"></span> <span> Dashboard </span>
+                            </a>
+                        </li> -->
+
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="icon-paper-sheet"></i><span> Maintenance <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                            <ul class="submenu">
+                                <li><a href="#">General Parameter</a></li>
+                                <li><a href="#">Bank Setup</a></li>
+                                <li><a href="#">Products Defination</a></li>
+                                <li><a href="#">Relationship Setup</a></li>
+                                <li><a href="#">Holiday Setup</a></li>
+                                <li><a href="#">Purpose Of Loan</a></li>
+                                <li><a href="#">Accounts Setup</a></li>
+                                <li><a href="#">Budget Setup</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="waves-effect"></i><span class="icon-paper-sheet"></span> <span> Member's BioData </span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="icon-paper-sheet"></i><span> General Posting <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                            <ul class="submenu">
+                                <li><a href="#">Member Receipt</a></li>
+                                <li><a href="#">Non Member Posting</a></li>
+                                <li><a href="#">Journal</a></li>
+                                <li><a href="#">petty cash</a></li>
+                                <li><a href="#">member Refund</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="icon-paper-sheet"></i><span> Member Loan <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                            <ul class="submenu">
+                                <li><a href="#">Loan Application</a></li>
+                                <li><a href="#">Loan Approval</a></li>
+                                <li><a href="#">Loan Transfer</a></li>
+                                <li><a href="#">Member Offset</a></li>
+                                <li><a href="#">Debit Guarantor</a></li>
+                                
+                            </ul>
+                        </li>
+
+                         <li>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="icon-paper-sheet"></i><span> Processes <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                            <ul class="submenu">
+                                <li><a href="#">Close Day</a></li>
+                                <li><a href="#">Close Month</a></li>
+                                <li><a href="#">Close year</a></li>
+                                <li><a href="#">Journal Transfer</a></li>
+                                <li><a href="#">Reference Checker</a></li>
+                                
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="icon-paper-sheet"></i><span> Utility <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                            <ul class="submenu">
+                                <li><a href="#">Count Queury</a></li>
+                                <li><a href="#">Search Member</a></li>
+                                <li><a href="#">Change User Password</a></li>
+                                <li><a href="#">Dividend Calculator</a></li>
+                                <li><a href="#">Internal Backup</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="icon-pencil-ruler"></i> <span> Reports <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span> </a>
+                            <ul class="submenu">
+                                <li><a href="#">Member's list report</a></li>
+                                <li><a href="#">Member Statement</a></li>
+                                <li><a href="#">Ledger Report</a></li>
+                                <li><a href="#">Monthly Contribution Reports</a></li>
+                                <li><a href="#">Trial Balance</a></li>
+                                <li><a href="#">Balance Sheet</a></li>
+                                <li><a href="#">Profit and Loss</a></li>
+                                <li><a href="#">Budget Report</a></li>
+                                <li><a href="#">Loans Application Report</a></li>
+                                <li><a href="#">Loan Approved Report</a></li>
+                                <li><a href="#">Member Deposit</a></li>
+                                <li><a href="#">Member Loans</a></li>
+                                <li><a href="#">Member Shares</a></li>
+                                <li><a href="#">Audit Trail</a></li>
+                                
+                            </ul>
+                        </li>
+
+                        <li class="menu-title">System Security</li>
+
+                        
+
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="icon-diamond"></i> <span> System Security <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span> </a>
+                            <ul class="submenu">
+                                <li><a href="advanced-alertify.html">System users</a></li>
+                                
+                            </ul>
+                        </li>
+
+                        
+
+                     
+                </div>
+                <!-- Sidebar -->
+                <div class="clearfix"></div>
+
+            </div>
+            <!-- Sidebar -left -->
+
+        </div>
+        <!-- Left Sidebar End -->
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+         <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="page-title-box">
+                            <div class="row align-items-center">
+                                <div class="col-sm-6">
+                                    <h4 class="page-title">Login Method</h4>
+                                </div>
+                               
+                            </div> <!-- end row -->
+                        </div>
+                        <!-- end page-title -->
+
+                         <div class="row">
+                                <div class="col-12">
+                                    <div class="card m-b-30">
+                                        <div class="card-body">
+                                            <div class="row">                                            
+                                                   
+                                                </div>
+                                            </div>
+            
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="panel panel-default">
+                                                        <div class="p-2">
+                                                            <h3 class="panel-title font-20"><strong>Login Form</strong></h3>
+                                                        </div>
+                                                        
+                                                            <form>
+                                                        <div class="imgcontainer">
+                                                            <img src="{% static 'images/sms.jpg' %}" alt="Avatar" class="avatar">
+                                                          </div>
+
+                                                          <div class="container_kki">
+                                                            <label for="uname"><b>Username</b></label>
+                                                            <input type="text" placeholder="Enter Username" name="uname" required>
+
+                                                            <label for="psw"><b>Password</b></label>
+                                                            <input type="password" placeholder="Enter Password" name="psw" required>
+
+                                                            <button type="submit">Login</button>
+                                                            <label>
+                                                              <input type="checkbox" checked="checked" name="remember"> Remember me
+                                                            </label>
+                                                          </div>
+                                                          <div class="container_kki" style="background-color:#f1f1f1">
+                                                            <!-- <button type="button" class="cancelbtn">Cancel</button>    -->
+                                                            <a href="#"> You Do Have Account Register here?</a><br> 
+                                                            <span class="psw">Forgot <a href="#">password?</a></span>
+                                                          </div>
+                                                        </form>
+
+
+
+
+                                                    </div>
+            
+                                                </div>
+                                            </div> <!-- end row -->
+            
+                                        </div>
+                                    </div>
+                                </div> <!-- end col -->
+                            </div> <!-- end row -->     
+
+                        
+                    </div>
+                    <!-- container-fluid -->
+
+                </div>
+            <!-- content -->
+
+            <footer class="footer">
+                © 2019 Precise Sacco Management system <span class="d-none d-sm-inline-block"> - Developed with <i class="mdi mdi-heart text-danger"></i> Realtime Technology Limited</span>.
+            </footer>
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Right content here -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+
+    <!-- jQuery  -->
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/metismenu.min.js"></script>
+    <script src="static/js/jquery.slimscroll.js"></script>
+    <script src="static/js/waves.min.js"></script>
+
+    <!--Morris Chart-->
+    <script src="../plugins/morris/morris.min.js"></script>
+    <script src="../plugins/raphael/raphael.min.js"></script>
+
+    <script src="static/pages/dashboard.init.js"></script>
+
+    <!-- App js -->
+    <script src="static/js/app.js"></script>
+
+</body>
+
+
+</html>
